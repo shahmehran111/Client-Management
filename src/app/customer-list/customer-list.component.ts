@@ -21,7 +21,7 @@ export class CustomerListComponent implements OnInit {
 
   onClickView(index : number){
     this.customerService.getCustomer(index)
-    this.router.navigate(['customerList', 1]);
+    this.router.navigate(['customerList', index]);
   }
 
   onDeleteList(index:number){

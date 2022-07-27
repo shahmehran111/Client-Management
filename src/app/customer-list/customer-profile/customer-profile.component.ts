@@ -19,7 +19,7 @@ export class CustomerProfileComponent implements OnInit {
     .subscribe((params: Params)=>{
         this.id = +params['id'];
         this.customer= this.customerService.getCustomer(this.id);
-        console.log(this.customer)
-    })
-  }
+      })
+      console.log(this.customer)
+    }
 }
