@@ -1,0 +1,28 @@
+<div class="container w-75">
+  <h4 class="my-3">Customer's List</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone#</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customer; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ customer.fname }}</td>
+        <td>{{ customer.phoneNo }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="onClickView(i)">
+            view
+          </button>
+          <button class="btn btn-danger btn-sm mx-3" (click)="onDeleteList(i)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
