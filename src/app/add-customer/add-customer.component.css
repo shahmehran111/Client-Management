@@ -42,3 +42,7 @@ body {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

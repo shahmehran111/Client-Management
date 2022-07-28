@@ -12,6 +12,7 @@ import { CustomerService } from '../shared/customer.service';
 export class CustomerListComponent implements OnInit {
   customer!: Customer[];
   id!:number;
+
   constructor(private customerService: CustomerService, private route: ActivatedRoute, private router: Router) { 
     
    }
@@ -27,5 +28,4 @@ export class CustomerListComponent implements OnInit {
   onDeleteList(index:number){
     this.customer.splice(index, 1);
   }
-
 }

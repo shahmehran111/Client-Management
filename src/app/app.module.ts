@@ -7,6 +7,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerProfileComponent } from './customer-list/customer-profile/customer-profile.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerService } from './shared/customer.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CustomerService } from './shared/customer.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
