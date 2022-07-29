@@ -7,19 +7,22 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerProfileComponent } from './customer-list/customer-profile/customer-profile.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerService } from './shared/customer.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
     CustomerProfileComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
