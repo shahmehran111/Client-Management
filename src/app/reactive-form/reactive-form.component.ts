@@ -14,8 +14,10 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUp = new FormGroup({
-      'userName': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
+      userData : new FormGroup({
+        'userName': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+      }),
       'gender': new FormControl('Male'),
     })
   }
