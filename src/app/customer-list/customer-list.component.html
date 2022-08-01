@@ -16,12 +16,15 @@
         <td>{{ customer.phoneNo }}</td>
         <td>
           <button class="btn btn-primary btn-sm" (click)="onClickView(i)">
-            view
+            View
+          </button>
+          <button class="btn btn-warning mx-3 btn-sm" (click)="onEdit(i)">
+            Edit
           </button>
 
           <button
             type="button"
-            class="btn btn-danger btn-sm mx-3"
+            class="btn btn-danger btn-sm"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >

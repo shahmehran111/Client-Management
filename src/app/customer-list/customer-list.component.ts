@@ -7,7 +7,7 @@ import { CustomerService } from '../shared/customer.service';
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css'],
-  providers:[CustomerService]
+  // providers:[CustomerService]
 })
 export class CustomerListComponent implements OnInit {
   customer!: Customer[];
@@ -17,7 +17,12 @@ export class CustomerListComponent implements OnInit {
     
    }
   ngOnInit(): void {
-    this.customer = this.customerService.getCustomers();
+    this.customerService.listupdate
+        .subscribe((customerNew : Customer[]) =>{
+          this.customer = customerNew;
+          console.log(this.customer)
+        })
+        this.customer = this.customerService.getCustomers();
   }
 
   onClickView(index : number){
@@ -27,5 +32,9 @@ export class CustomerListComponent implements OnInit {
 
   onDeleteList(index:number){
     this.customer.splice(index, 1);
+  }
+
+  onEdit(index: number ){
+    this.customerService.startEditing.emit(index);
   }
 }

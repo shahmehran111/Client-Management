@@ -6,7 +6,9 @@ import { Customer } from './customer.model';
   providedIn: 'root'
 })
 export class CustomerService {
-  // selectedCustomer = new EventEmitter<Customer>();
+  selectedCustomer = new EventEmitter<Customer>();
+  listupdate = new EventEmitter<Customer[]>();
+  startEditing = new EventEmitter<number>();
   private customer: Customer[] = [ 
      new Customer('Asmat','Bacha','5433452','female'),
      new Customer('TOUQER','Bacha','5433452','female'),
@@ -21,7 +23,16 @@ export class CustomerService {
   }
 
   getCustomer(index: number){
-    console.log(index + ": id")
    return this.customer[index] ;
-   } 
+   }
+
+  addCustomer(data: Customer){
+    this.customer.push(data)
+    this.listupdate.emit(this.customer.slice())
+  }
+
+  updateCustomer(index : number, newCustomer : Customer){
+    this.customer[index] = newCustomer;
+    this.listupdate.emit(this.customer.slice())
+  }
 }
